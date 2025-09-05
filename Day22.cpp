@@ -6,16 +6,16 @@ using namespace std;
 int find(vector<int>brr,int k1)
 {
     int n= brr.size();
-    unordered_map<int,int>m(n);
+    unordered_map<int,int>m;
     for(int i=0;i<n;i++)
     {
         m[brr[i]]++;
     }
-    for(auto it :m)
+    for(int i=0;i<n;i++)
     {
-        if(it.second == k1)
+        if(m[brr[i]] == k1)
         {
-            return it.first;
+            return brr[i];
         }
     }
     return -1;
